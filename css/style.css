@@ -1,0 +1,122 @@
+*{padding:0;margin:0;border:0;}
+*,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+:focus,:active{outline:none;}
+a:focus,a:active{outline:none;}
+nav,footer,header,aside{display:block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display:none;}
+button{cursor:pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+a,a:visited{text-decoration:none;}
+a:hover{text-decoration:none;}
+ul li{list-style:none;}
+img{vertical-align:top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
+/*--------------------*/
+@import url("css/media.css");
+
+
+html body{
+  width: 100%;
+  font-family: Roboto, sans-serif;
+  background-color: rgba(0,0,0, .4);
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.header {}
+.nav {
+  width: 100%;
+  height: 70px;
+  background-color:#18BCFF;
+  /*opacity: 0.3;*/
+}
+.wrap__nav {}
+.main__menu {}
+.list__menu {
+  display: flex;
+  justify-content: space-around;
+  margin-left: -20px;
+}
+.link__menu {
+  padding-left: 20px;
+}
+.link {
+  color: #fff;
+  line-height: 70px;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 600;
+}
+.content {
+  flex: 1 1 auto;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+
+}
+.table-body {
+  margin: 30px 0px;
+  padding: 0 10px;
+  border: 1px solid #000;
+  display: flex;
+  flex-direction:column; 
+}
+.tr-title {
+  display: flex;
+}
+.td-title {
+  flex: 1 1 25%;
+  border: 1px solid #000;
+  background-color: #fff;
+  margin: 1px;
+  border-radius: 5px;
+  min-height: 30px;
+  font-size: 16px;
+  text-transform: uppercase;
+  line-height: 30px;
+  text-align: center;
+  font-weight: 600;
+}
+.tr__item {
+  display: flex;
+}
+.td__item {
+
+  flex: 1 1 25%;
+  border: 1px solid #fff;
+  background-color: #fff;
+  margin: 1px;
+  border-radius: 5px;
+  min-height: 30px;
+  font-size: 16px;
+  /*text-transform: uppercase;*/
+  line-height: 30px;
+  text-align: center;
+  font-weight: 600;
+}
+code{
+  tt
+}
+
+.footer {
+  width: 100%;
+  height: 70px;
+  background-color:#18BCFF; 
+}
+.container {}
+.wrap__footer {
+  display: flex;
+  justify-content: space-around;
+}
+.footer__item {
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 500;
+  color: #FFF;
+  line-height: 70px;
+}

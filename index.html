@@ -13,8 +13,12 @@
         <div class="wrap__nav">
           <div class="container">
             <div class="main__menu">
+              <div class="search__form">
+            <input type="text" id="text-to-find" value="">
+            <input type="button" onclick="javascript: FindOnPage('text-to-find'); return false;" value="Искать"/>
+          </div>
               <ul class="list__menu">
-                <li class="link__menu"><a href="#" class="link">главная</a></li>
+                <!-- <li class="link__menu"><a href="#" class="link">главная</a></li> -->
                 <li class="link__menu"><a href="#" class="link">HTML</a></li>
                 <li class="link__menu"><a href="#" class="link">CSS</a></li>
                 <li class="link__menu"><a href="#" class="link">JAVASCRIPT</a></li>
@@ -37,6 +41,10 @@
                   <div class="gratitude__name">Хачатуряну Алексею</div>
               </div>
           </div>
+          <!-- <div class="search__form">
+            <input type="text" id="text-to-find" value="">
+            <input type="button" onclick="javascript: FindOnPage('text-to-find'); return false;" value="Искать"/>
+          </div> -->
           <div class="table-body">
             <div class="tr-title">
               <div class="td-title">Термин</div>
@@ -214,5 +222,41 @@
         </div>
       </footer>
   </div>
+  <script>
+let lastResFind=""; // последний удачный результат
+let copy_page=""; // копия страницы в ихсодном виде
+function TrimStr(s) {
+     s = s.replace( /^\s+/g, '');
+  return s.replace( /\s+$/g, '');
+}
+function FindOnPage(inputId) {//ищет текст на странице, в параметр передается ID поля для ввода
+  let obj = window.document.getElementById(inputId);
+  let textToFind;
+ 
+  if (obj) {
+    textToFind = TrimStr(obj.value);//обрезаем пробелы
+  } else {
+    alert("Введенная фраза не найдена");
+    return;
+  }
+  if (textToFind == "") {
+    alert("Вы ничего не ввели");
+    return;
+  }
+ 
+  if(document.body.innerHTML.indexOf(textToFind)=="-1")
+  alert("Ничего не найдено, проверьте правильность ввода!");
+ 
+  if(copy_page.length>0)
+        document.body.innerHTML=copy_page;
+  else copy_page=document.body.innerHTML;
+
+ 
+  document.body.innerHTML = document.body.innerHTML.replace(eval("/name="+lastResFind+"/gi")," ");//стираем предыдущие якори для скрола
+  document.body.innerHTML = document.body.innerHTML.replace(eval("/"+textToFind+"/gi"),"<a name="+textToFind+" style='background:red'>"+textToFind+"</a>"); //Заменяем найденный текст ссылками с якорем;
+  lastResFind=textToFind; // сохраняем фразу для поиска, чтобы в дальнейшем по ней стереть все ссылки
+  window.location = '#'+textToFind;//перемещаем скрол к последнему найденному совпадению
+ }
+</script>
 </body>
 </html>
